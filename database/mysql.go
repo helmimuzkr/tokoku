@@ -10,10 +10,10 @@ import (
 )
 
 func NewConnectionDB(c *config.AppConfig) *sql.DB {
-	port := c.Database.Port
-	host := c.Database.Host
 	user := c.Database.User
 	password := c.Database.Password
+	host := c.Database.Host
+	port := c.Database.Port
 	dbName := c.Database.DBName
 
 	// Buat data source name
