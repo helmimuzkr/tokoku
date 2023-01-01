@@ -32,7 +32,6 @@ func InitConfig() *AppConfig {
 	// Load file .env di root menggunakan library godotenv
 	if err := godotenv.Load(); err != nil {
 		log.Fatal("Error loading .env file")
-		return &appConfig
 	}
 
 	// App
@@ -41,8 +40,8 @@ func InitConfig() *AppConfig {
 
 	// Database
 	appConfig.Database.User = os.Getenv("DB_USER")
-	appConfig.Database.Password = os.Getenv("DB_Password")
-	appConfig.Database.Host = os.Getenv("DB_Host")
+	appConfig.Database.Password = os.Getenv("DB_PASS")
+	appConfig.Database.Host = os.Getenv("DB_HOST")
 	appConfig.Database.Port = os.Getenv("DB_PORT")
 	appConfig.Database.DBName = os.Getenv("DB_NAME")
 
